@@ -41,7 +41,7 @@ function searchSong()
  *
  */
 
-$('search-form').addEventListener("click", function(event){
+$('search-button').addEventListener("click", function(event){
     event.preventDefault();
 
     searchSong();
