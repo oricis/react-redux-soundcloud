@@ -1,0 +1,66 @@
+/**
+ * Custom styles
+ *
+ */
+
+article,
+footer {
+    border-top : 20px solid #0478E1;
+    padding-top: 2rem;
+}
+
+div {
+    margin       : 1rem;
+    padding      : 1rem;
+}
+div:not(.color-scheme):not(.footer-data) {
+    border-radius: .5rem;
+    border       : 2px solid #0478E1;
+}
+input {
+    border-radius: .2rem;
+    font-size    : 1rem;
+    padding      : 1rem;
+}
+input:focus,
+input:selected {
+    background: black;
+}
+
+.actual-song {
+
+}
+.actual-song,
+.color-scheme,
+.form {
+    margin-left : 0;
+    margin-right: 0;
+}
+.btn {
+    background  : #0478E1;
+    border-color: #02437D;
+    color       : pink;
+    cursor      : pointer;
+    font-weight : bold;
+    min-width   : 120px;
+}
+.color-scheme {
+    padding: 0;
+}
+.color-scheme ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+.color-scheme li {
+    height: 50px;
+    flex: 1 1 0px;
+}
+.color-scheme li * {
+    display: none;
+}
+.code:first-child {
+    display: block;
+}
+.left-side-btn {
+    margin-left: 1rem;
+}

@@ -1,0 +1,68 @@
+/***
+ * Reset
+ *
+ */
+
+ * {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin    : 0;
+    padding   : 0;
+    text-align: center;
+}
+
+/***
+ * Base styles
+ *
+ */
+
+ul {
+    list-style-type: none;
+}
+article,
+aside,
+footer,
+header {
+    color: #0478E1;
+}
+body {
+    background: black;
+}
+
+/***
+ * Bg colors
+ *
+ */
+
+.bg-blue { background-color: blue }
+.bg-darkblue { background-color: darkblue }
+.bg-lightblue { background-color: #0478e1 }
+.bg-pink { background-color: pink }
+.bg-purple { background-color: purple }
+.bg-violet { background-color: violet }
+
+/***
+ * Font colors
+ *
+ */
+
+.color-blue { color: blue }
+.color-darkblue { color: darkblue }
+.color-electricblue { color: #035096 }
+.color-lightblue { color: #0478e1 }
+.color-pink { color: pink }
+.color-purple { color: purple }
+.color-violet { color: violet }
+
+/***
+ * Display elements
+ *
+ */
+
+.hidden {
+    display: none;
+}
+.block {
+    display: block;
+}
