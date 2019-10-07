@@ -46,6 +46,11 @@ $('search-form').addEventListener("click", function(event){
 
     searchSong();
 });
+window.addEventListener('keypress', function (event) {
+    if (event.keyCode === 13) {
+        searchSong();
+    }
+}, false);
 
 
 /**
