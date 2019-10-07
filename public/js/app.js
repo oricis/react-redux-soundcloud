@@ -5,11 +5,35 @@
  *
  */
 
+function loadSongs(search)
+{
+    // TODO: fetch results for "search"
+}
+
+
+
+function playSong()
+{
+    $('playing-song').style.display = "block";
+
+    // TODO: set song's image and play
+}
+
 function searchSong()
 {
-    console.log('btn clicked');
+    console.log('btn clicked - searching: ' + $('search').value);
 
-    $('playing-song').style.display = "block";
+    let search = $('search').value;
+    if (search == '') {
+        console.warn('The search input is empty !'); // HACK:
+        return;
+    }
+
+
+    // TODO: loadSongs()
+
+
+    playSong(); // HACK:
 }
 
 /**
@@ -29,4 +53,6 @@ $('search-form').addEventListener("click", function(event){
  *
  */
 
- var api_key = "aa06b0630e34d6055f9c6f8beb8e02eb";
+SC.initialize({
+    client_id: 'aa06b0630e34d6055f9c6f8beb8e02eb'
+});
