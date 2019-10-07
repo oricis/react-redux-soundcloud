@@ -7,7 +7,40 @@
 
 function loadSongs(search)
 {
-    // TODO: fetch results for "search"
+    SC.get('/tracks', {
+            query: search
+        })
+        .then(function (result) {
+            if (result.length > 0) {
+                console.log(result[0]); // HACK:
+
+                playSong(); // HACK: show box
+
+                for (let i = 0; i < result.length; i++) {
+                    const cover_box = document.createElement('div');
+                    const image = document.createElement('img');
+                    const image_src = result[i].artwork_url;
+                    console.log(image_src);
+
+                    cover_box.className = 'cover-image';
+                    if (image_src == null) {
+                        cover_box.className = 'cover-image cover-image-default';
+                        image.alt = 'generic song image';
+                        image.src = './public/images/sound-png-5.png';
+
+                    } else {
+                        image.src = image_src
+                    }
+
+                    cover_box.append(image);
+                    document.querySelector('.results').append(cover_box);
+
+                } /**/
+            } else {
+                alert('No songs finded !');
+            }
+        });
+
 }
 
 
@@ -29,11 +62,7 @@ function searchSong()
         return;
     }
 
-
-    // TODO: loadSongs()
-
-
-    playSong(); // HACK:
+    loadSongs(search);
 }
 
 /**

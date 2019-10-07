@@ -32,7 +32,8 @@ input:selected {
 }
 .actual-song,
 .color-scheme,
-.form {
+.form,
+.results {
     margin-left : 0;
     margin-right: 0;
 }
@@ -61,6 +62,31 @@ input:selected {
 .code:first-child {
     display: block;
 }
+.cover-image {
+    border : 0 !important;
+    cursor : pointer;
+    justify-content: center;
+    height : 100px;
+    padding: 0;
+    width  : 100px;
+}
+.cover-image:hover {
+    border-radius: .2rem;
+    box-shadow: 0px 0px 9px white;
+}
+
+.cover-image img:hover {
+    border-radius: .2rem;
+}
+.cover-image-default img {
+    height : 90px;
+    padding: 5px;
+    width  : 90px;
+}
 .left-side-btn {
     margin-left: 1rem;
+}
+.results {
+    display: flex;
+    flex-wrap: wrap;
 }
