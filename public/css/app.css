@@ -56,12 +56,6 @@ input:selected {
     height: 50px;
     flex: 1 1 0px;
 }
-.color-scheme li * {
-    display: none;
-}
-.code:first-child {
-    display: block;
-}
 .cover-image {
     border : 0 !important;
     cursor : pointer;
@@ -74,7 +68,6 @@ input:selected {
     border-radius: .2rem;
     box-shadow: 0px 0px 9px white;
 }
-
 .cover-image img:hover {
     border-radius: .2rem;
 }
