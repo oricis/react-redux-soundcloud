@@ -52,6 +52,7 @@ function dragEnd(event)
         image.setAttribute('width', 100);
 
         event.target.append(image);
+        playSong(source_track_id);
     }
 
     // Clear the drag data cache (for all formats/types)

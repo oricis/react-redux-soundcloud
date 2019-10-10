@@ -55,9 +55,11 @@ function loadSongs(search)
 
 }
 
-function playSong()
+function playSong(track_id)
 {
-    // TODO: set song's image and play
+    SC.stream('/tracks/' + track_id).then(function(player){
+        player.play();
+    });
 }
 
 function searchSong()
