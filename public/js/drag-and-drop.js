@@ -27,6 +27,7 @@ function dragStart(event)
     dt.dropEffect = 'move';
 
     event.target.style.opacity = 0.5;
+    $('actual-song').classList.add('dashed-border');
 }
 
 function dragEnd(event)
@@ -51,7 +52,11 @@ function dragEnd(event)
         image.setAttribute('height', 100);
         image.setAttribute('width', 100);
 
+        // clean div contents and restore track in list
+        removePreviousTrack(event.target);
+
         event.target.append(image);
+        event.target.classList.remove('dashed-border');
         playSong(source_track_id);
     }
 

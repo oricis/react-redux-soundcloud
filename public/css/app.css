@@ -76,6 +76,9 @@ input:selected {
     padding: 5px;
     width  : 90px;
 }
+.droppable-zone-info {
+    font-size: 1.25rem;
+}
 .left-side-btn {
     margin-left: 1rem;
 }

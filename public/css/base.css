@@ -30,6 +30,10 @@ body {
     background: black;
 }
 
+.dashed-border {
+    border-style: dashed !important;
+}
+
 /***
  * Bg colors
  *

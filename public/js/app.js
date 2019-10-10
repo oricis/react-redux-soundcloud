@@ -1,4 +1,5 @@
 
+var actual_track_id;
 
 /**
  * Functions declarations
@@ -60,6 +61,18 @@ function playSong(track_id)
     SC.stream('/tracks/' + track_id).then(function(player){
         player.play();
     });
+
+    actual_track_id = track_id;
+}
+
+function removePreviousTrack(target)
+{
+    target.innerHTML = '';
+
+    if (actual_track_id != undefined) {
+        $(actual_track_id).style.opacity = 1;
+        actual_track_id = undefined;
+    }
 }
 
 function searchSong()
