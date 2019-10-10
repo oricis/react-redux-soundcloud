@@ -5,37 +5,49 @@
  *
  */
 
+function loadContent(song)
+{
+    var cover_box = document.createElement('div');
+    var image     = document.createElement('img');
+    var image_src = song.artwork_url;
+
+
+    cover_box.className = 'cover-image';
+    if (image_src == null) {
+        cover_box.className = 'cover-image cover-image-default';
+        image.alt = 'generic song image';
+        image.src = './public/images/sound-png-5.png';
+
+    } else {
+        image.src = image_src
+    }
+    image.setAttribute('dragable', 'true');
+    image.setAttribute('ondragstart', 'dragStart(event)');
+    image.id    = song.id;
+    image.title = song.title;
+
+    cover_box.append(image);
+    document.querySelector('.results').append(cover_box);
+}
+
 function loadSongs(search)
 {
+    // clean div contents
+    document.querySelector('.results').innerHTML = '';
+
     SC.get('/tracks', {
             query: search
         })
         .then(function (result) {
             if (result.length > 0) {
-                console.log(result[0]); // HACK:
+                $('playing-song').style.display = "block"; // NOTE: show box
 
-                playSong(); // HACK: show box
+                // console.log(result[0]); // HACK:
+                for (var i = 0; i < result.length; i++) {
+                    var song = result[i];
+                    loadContent(song);
+                }
 
-                for (let i = 0; i < result.length; i++) {
-                    const cover_box = document.createElement('div');
-                    const image = document.createElement('img');
-                    const image_src = result[i].artwork_url;
-                    console.log(image_src);
-
-                    cover_box.className = 'cover-image';
-                    if (image_src == null) {
-                        cover_box.className = 'cover-image cover-image-default';
-                        image.alt = 'generic song image';
-                        image.src = './public/images/sound-png-5.png';
-
-                    } else {
-                        image.src = image_src
-                    }
-
-                    cover_box.append(image);
-                    document.querySelector('.results').append(cover_box);
-
-                } /**/
             } else {
                 alert('No songs finded !');
             }
@@ -43,20 +55,14 @@ function loadSongs(search)
 
 }
 
-
-
 function playSong()
 {
-    $('playing-song').style.display = "block";
-
     // TODO: set song's image and play
 }
 
 function searchSong()
 {
-    console.log('btn clicked - searching: ' + $('search').value);
-
-    let search = $('search').value;
+    var search = $('search').value;
     if (search == '') {
         console.warn('The search input is empty !'); // HACK:
         return;
@@ -64,6 +70,7 @@ function searchSong()
 
     loadSongs(search);
 }
+
 
 /**
  * Events

@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Práctica Soundcloud</title>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link rel="stylesheet" href="./public/css/base.css">
     <link rel="stylesheet" href="./public/css/app.css">
 </head>
@@ -25,16 +27,20 @@
                     </form>
                 </div>
 
-                <!--/ Search results /-->
+                <!--/ Search results (start dragging) /-->
                 <div class="results"></div>
             </article>
 
             <article class="hidden" id="playing-song">
                 <h3 class="color-electricblue">Canción actual</h3>
 
-                <!--/ Song playing /-->
-                <div class="actual-song" ondrop="drop(event)" ondragover="allowDrop(event)" id="actual-song">
-                    Arrastrar aquí...
+                <!--/ Song playing (end dragging) /-->
+                <div class="actual-song"
+                    ondragover="allowDrop(event)"
+                    ondrop="dragEnd(event)"
+                    id="actual-song">
+                    <p>Arrastrar aquí para reproducir...</p>
+                    <br>
                 </div>
             </article>
         </section>
@@ -65,5 +71,6 @@
 
     <script src="https://connect.soundcloud.com/sdk/sdk-3.3.2.js"></script>
     <script src="./public/js/app.js" async></script>
+    <script src="./public/js/drag-and-drop.js" async></script>
 </body>
 </html>
