@@ -13,8 +13,8 @@ class PlayerBox extends Component
                 <h3 className="color-electricblue">Canción actual</h3>
 
                 <div className="actual-song"
-                    ondragover="allowDrop(event)"
-                    ondrop="dragEnd(event)"
+                    onDragOver={this.allowDrop}
+                    onDrop={this.dragEnd}
                     id="actual-song">
 
                     <span className="droppable-zone-info">
@@ -23,6 +23,15 @@ class PlayerBox extends Component
                 </div>
             </article>
         );
+    }
+
+
+    allowDrop = (event) => {
+        window.allowDrop(event); // Call to external function in JS file
+    }
+
+    dragEnd = (event) => {
+        window.dragEnd(event); // Call to external function in JS file
     }
 }
 
