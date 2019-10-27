@@ -16,40 +16,13 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
 
     <div class="content">
       <header>
         <h1 class="color-lightblue">Práctica Soundcloud</h1>
       </header>
 
-      <section>
-        <article>
-          <h3 class="color-electricblue">Busca tu canción...</h3>
-
-          <div class="form">
-            <form name="search-form" id="search-form">
-              <input type="text" name="search" id="search">
-
-              <input type="submit" class="btn left-side-btn" id="search-button" value="Buscar">
-            </form>
-          </div>
-
-          <!--/ Search results (start dragging) /-->
-          <div class="results"></div>
-        </article>
-
-        <article class="hidden" id="playing-song">
-          <h3 class="color-electricblue">Canción actual</h3>
-
-          <!--/ Song playing (end dragging) /-->
-          <div class="actual-song" ondragover="allowDrop(event)" ondrop="dragEnd(event)" id="actual-song">
-            <span class="droppable-zone-info">
-              Arrastra aquí para reproducir ...
-            </span>
-          </div>
-        </article>
-      </section>
+      <section id="root"></section>
 
       <aside>
         <div id="monochromatic" class="color-scheme">
