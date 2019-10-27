@@ -31,29 +31,19 @@ function loadContent(song)
     document.querySelector('.results').append(cover_box);
 }
 
-function loadSongs(search)
+function loadSongs(songs)
 {
-    // clean div contents
-    document.querySelector('.results').innerHTML = '';
+    if (songs && songs.length > 0) {
+        $('playing-song').style.display = "block"; // NOTE: show box
 
-    SC.get('/tracks', {
-            q: search
-        })
-        .then(function (result) {
-            if (result.length > 0) {
-                $('playing-song').style.display = "block"; // NOTE: show box
+        for (var i = 0; i < songs.length; i++) {
+            var song = songs[i];
+            loadContent(song);
+        }
 
-                // console.log(result[0]); // HACK:
-                for (var i = 0; i < result.length; i++) {
-                    var song = result[i];
-                    loadContent(song);
-                }
-
-            } else {
-                alert('No songs finded !');
-            }
-        });
-
+    } else {
+        alert('No songs finded !');
+    }
 }
 
 function playSong(track_id)
@@ -73,16 +63,6 @@ function removePreviousTrack(target)
         $(actual_track_id).style.opacity = 1;
         actual_track_id = undefined;
     }
-}
-
-function searchSong(search)
-{
-    if (search == '') {
-        console.warn('The search input is empty !'); // HACK:
-        return;
-    }
-
-    loadSongs(search);
 }
 
 /**
