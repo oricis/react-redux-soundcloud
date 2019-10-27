@@ -23,7 +23,7 @@ function loadContent(song)
         image.src = image_src
     }
     image.setAttribute('dragable', 'true');
-    image.setAttribute('ondragstart', 'dragStart(event)');
+    image.setAttribute('onDragStart', 'dragStart(event)');
     image.id    = song.id;
     image.title = song.title;
 
@@ -75,9 +75,8 @@ function removePreviousTrack(target)
     }
 }
 
-function searchSong()
+function searchSong(search)
 {
-    var search = $('search').value;
     if (search == '') {
         console.warn('The search input is empty !'); // HACK:
         return;
@@ -85,24 +84,6 @@ function searchSong()
 
     loadSongs(search);
 }
-
-
-/**
- * Events
- *
- */
-
-$('search-button').addEventListener("click", function(event){
-    event.preventDefault();
-
-    searchSong();
-});
-window.addEventListener('keypress', function (event) {
-    if (event.keyCode === 13) {
-        searchSong();
-    }
-}, false);
-
 
 /**
  * App's code

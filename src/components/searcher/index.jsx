@@ -13,14 +13,26 @@ class Searcher extends Component
                 <h3 className="color-electricblue">Busca tu canción...</h3>
 
                 <div className="form">
-                    <form name="search-form" id="search-form">
-                        <input type="text" name="search" id="search" />
+                    <form onSubmit={this.handleSubmit}>
+                        <input type="text"
+                            name="to_search" />
 
-                        <input type="submit" className="btn left-side-btn" id="search-button" value="Buscar" />
+                        <input type="submit"
+                            className="btn left-side-btn"
+                            value="Buscar" />
                     </form>
                 </div>
             </article>
         );
+    }
+
+
+    handleSubmit = (event) => {
+        event.preventDefault();
+        const formdata = new FormData(event.target);
+        const to_search = formdata.get('to_search');
+
+        window.searchSong(to_search);
     }
 }
 
