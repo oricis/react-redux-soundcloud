@@ -11,13 +11,13 @@ function loadContent(song)
     var cover_box = document.createElement('div');
     var image     = document.createElement('img');
     var image_src = song.artwork_url;
-
+    var path_to_generic_image = './images/sound-png-5.png';
 
     cover_box.className = 'cover-image';
     if (image_src == null) {
         cover_box.className = 'cover-image cover-image-default';
         image.alt = 'generic song image';
-        image.src = './public/images/sound-png-5.png';
+        image.src = path_to_generic_image;
 
     } else {
         image.src = image_src
