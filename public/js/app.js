@@ -37,7 +37,7 @@ function loadSongs(search)
     document.querySelector('.results').innerHTML = '';
 
     SC.get('/tracks', {
-            query: search
+            q: search
         })
         .then(function (result) {
             if (result.length > 0) {

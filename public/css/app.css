@@ -27,8 +27,9 @@ input:selected {
     background: black;
 }
 
-.actual-song {
-
+.actual-song img {
+    position: relative;
+    z-index : -1;
 }
 .actual-song,
 .color-scheme,
@@ -78,11 +79,13 @@ input:selected {
 }
 .droppable-zone-info {
     font-size: 1.25rem;
+    position : relative;
+    z-index  : -9;
 }
 .left-side-btn {
     margin-left: 1rem;
 }
 .results {
-    display: flex;
+    display  : flex;
     flex-wrap: wrap;
 }
