@@ -4,6 +4,10 @@ import '../assets/styles/reset.css';
 import '../assets/styles/base.scss';
 import '../assets/styles/App.scss';
 
+import PlayerBox from '../components/player-box/index';
+import Results from '../components/results/index';
+import Searcher from '../components/searcher/index.jsx';
+
 class App extends Component
 {
 
@@ -11,33 +15,9 @@ class App extends Component
     {
         return (
             <div>
-                <article>
-                    <h3 className="color-electricblue">Busca tu canción...</h3>
-
-                    <div className="form">
-                        <form name="search-form" id="search-form">
-                            <input type="text" name="search" id="search" />
-
-                            <input type="submit" className="btn left-side-btn" id="search-button" value="Buscar" />
-                        </form>
-                    </div>
-                </article>
-
-                <article className="results"></article>
-
-                <article className="hidden" id="playing-song">
-                    <h3 className="color-electricblue">Canción actual</h3>
-
-                    <div className="actual-song"
-                        ondragover="allowDrop(event)"
-                        ondrop="dragEnd(event)"
-                        id="actual-song">
-
-                        <span className="droppable-zone-info">
-                            Arrastra aquí para reproducir ...
-                        </span>
-                    </div>
-                </article>
+                <Searcher></Searcher>
+                <Results></Results>
+                <PlayerBox></PlayerBox>
             </div>
         );
     }
