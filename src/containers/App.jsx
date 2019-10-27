@@ -21,15 +21,13 @@ class App extends Component
                             <input type="submit" className="btn left-side-btn" id="search-button" value="Buscar" />
                         </form>
                     </div>
-
-                    /*** Search results (start dragging) ***/
-                    <div className="results"></div>
                 </article>
+
+                <article className="results"></article>
 
                 <article className="hidden" id="playing-song">
                     <h3 className="color-electricblue">Canción actual</h3>
 
-                    /*** Song playing (end dragging) ***/
                     <div className="actual-song"
                         ondragover="allowDrop(event)"
                         ondrop="dragEnd(event)"
