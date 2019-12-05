@@ -1,0 +1,22 @@
+
+/***
+ * Reset
+ *
+ */
+
+ * {
+    -moz-box-sizing   : border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin    : 0;
+    padding   : 0;
+    text-align: center;
+}
+
+html {
+  font-size:calc(5px+1vw);
+}
+img {
+  height: auto;
+  width:  100%;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site to play songs from Soundcloud"
+    />
+    <meta charset="UTF-8">
+    <title>Práctica Soundcloud</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/app.css">
+  </head>
+  <body class="grid">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+
+    <div class="content">
+      <header>
+        <h1 class="color-lightblue">Práctica Soundcloud</h1>
+      </header>
+
+      <section id="root"></section>
+
+      <aside>
+        <div id="monochromatic" class="color-scheme">
+          <ul>
+            <li style="background-color:#01284b;"></li>
+            <li style="background-color:#023564;"></li>
+            <li style="background-color:#02437d;"></li>
+            <li style="background-color:#035096;"></li>
+            <li style="background-color:#035daf;"></li>
+            <li style="background-color:#046bc8;"></li>
+            <li style="background-color:#0478e1;"></li>
+          </ul>
+        </div>
+      </aside>
+
+      <footer>
+        <div class="footer-data">
+          <p>Moisés Alcocer, 2019</p>
+        </div>
+      </footer>
+    </div>
+
+    <script src="./js/utils.js"></script>
+    <script src="https://connect.soundcloud.com/sdk/sdk-3.3.2.js"></script>
+    <script src="./js/app.js" async></script>
+    <script src="./js/drag-and-drop.js" async></script>
+  </body>
+</html>
