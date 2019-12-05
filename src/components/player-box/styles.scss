@@ -1,0 +1,20 @@
+
+/***
+ * Component styles
+ *
+ */
+
+.actual-song {
+    margin-left : 0;
+    margin-right: 0;
+
+    img {
+        position: relative;
+        z-index : -1;
+    }
+}
+.droppable-zone-info {
+    font-size: 1.25rem;
+    position : relative;
+    z-index  : -9;
+}

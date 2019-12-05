@@ -11,19 +11,19 @@ function loadContent(song)
     var cover_box = document.createElement('div');
     var image     = document.createElement('img');
     var image_src = song.artwork_url;
-
+    var path_to_generic_image = './images/sound-png-5.png';
 
     cover_box.className = 'cover-image';
     if (image_src == null) {
         cover_box.className = 'cover-image cover-image-default';
         image.alt = 'generic song image';
-        image.src = './public/images/sound-png-5.png';
+        image.src = path_to_generic_image;
 
     } else {
         image.src = image_src
     }
     image.setAttribute('dragable', 'true');
-    image.setAttribute('ondragstart', 'dragStart(event)');
+    image.setAttribute('onDragStart', 'dragStart(event)');
     image.id    = song.id;
     image.title = song.title;
 
@@ -31,29 +31,19 @@ function loadContent(song)
     document.querySelector('.results').append(cover_box);
 }
 
-function loadSongs(search)
+function loadSongs(songs)
 {
-    // clean div contents
-    document.querySelector('.results').innerHTML = '';
+    if (songs && songs.length > 0) {
+        $('playing-song').style.display = "block"; // NOTE: show box
 
-    SC.get('/tracks', {
-            q: search
-        })
-        .then(function (result) {
-            if (result.length > 0) {
-                $('playing-song').style.display = "block"; // NOTE: show box
+        for (var i = 0; i < songs.length; i++) {
+            var song = songs[i];
+            loadContent(song);
+        }
 
-                // console.log(result[0]); // HACK:
-                for (var i = 0; i < result.length; i++) {
-                    var song = result[i];
-                    loadContent(song);
-                }
-
-            } else {
-                alert('No songs finded !');
-            }
-        });
-
+    } else {
+        alert('No songs finded !');
+    }
 }
 
 function playSong(track_id)
@@ -74,35 +64,6 @@ function removePreviousTrack(target)
         actual_track_id = undefined;
     }
 }
-
-function searchSong()
-{
-    var search = $('search').value;
-    if (search == '') {
-        console.warn('The search input is empty !'); // HACK:
-        return;
-    }
-
-    loadSongs(search);
-}
-
-
-/**
- * Events
- *
- */
-
-$('search-button').addEventListener("click", function(event){
-    event.preventDefault();
-
-    searchSong();
-});
-window.addEventListener('keypress', function (event) {
-    if (event.keyCode === 13) {
-        searchSong();
-    }
-}, false);
-
 
 /**
  * App's code

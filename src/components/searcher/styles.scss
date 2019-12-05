@@ -1,0 +1,57 @@
+
+/***
+ * Component styles
+ *
+ */
+
+.form {
+    margin: 0;
+    padding: 0;
+
+    input {
+        border-radius: 3px;
+        display      : inline-block;
+        font-size    : 1rem;
+        margin       : .5rem auto;
+        padding      : .5rem;
+
+        width        : 100%;
+    }
+    input:focus,
+    input:selected {
+        background: black;
+    }
+
+    .left-side-btn {
+        // margin-left: 1rem;
+    }
+}
+
+
+@media (min-width:480px) {
+    .form {
+        input {
+            width: 68%;
+        }
+    }
+}
+
+@media (min-width:720px) {
+    .form {
+        margin   : 1rem auto;
+        max-width: 720px;
+        form {
+            display: flex;
+            justify-content: space-between;
+
+            input {
+                max-width: 480px;
+                width    : 60%;
+            }
+            input.btn {
+                max-width: 240px;
+                width    : 30%;
+            }
+        }
+    }
+}

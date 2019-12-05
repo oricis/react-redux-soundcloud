@@ -1,0 +1,53 @@
+/**
+ * Custom styles
+ *
+ */
+
+article {
+    margin: .5rem auto;
+    width : 95%;
+}
+
+article,
+footer {
+    border-top : 1px solid #0478E1;
+    padding-top: 2rem;
+}
+
+div {
+    margin : .25rem;
+    padding: .25rem;
+}
+div:not(.color-scheme):not(.footer-data):not(.form) {
+    border-radius: .5rem;
+    border       : 2px solid #0478E1;
+}
+
+.btn {
+    background  : #0478E1;
+    border-color: #02437D;
+    color       : pink;
+    cursor      : pointer;
+    font-weight : bold;
+    min-width   : 120px;
+}
+
+.color-scheme {
+    margin-left : 0;
+    margin-right: 0;
+    padding     : 0;
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+
+        li {
+            height: 50px;
+            flex: 1 1 0px;
+        }
+    }
+}
+
+.content {
+    margin-top: 2rem;
+}
