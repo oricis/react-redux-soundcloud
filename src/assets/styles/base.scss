@@ -51,9 +51,13 @@ body {
  *
  */
 
-.hidden {
-    display: none;
-}
 .block {
     display: block;
+}
+.grid {
+    display: grid;
+    min-height: 100vh;
+}
+.hidden {
+    display: none;
 }
